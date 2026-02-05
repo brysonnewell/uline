@@ -33,18 +33,6 @@
             background: radial-gradient(circle at top right, var(--ds-cobalt) 0%, var(--ds-inkwell) 60%);
         }
 
-        .ds-gradient-surface {
-            background: linear-gradient(180deg, var(--ds-ecru) 0%, #FFFFFF 100%);
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
         /* Modern Grid Cards */
         .bento-card {
             background-color: var(--ds-white);
@@ -61,16 +49,6 @@
             transform: translateY(-4px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             border-color: var(--ds-cobalt);
-        }
-
-        /* Quote Styling */
-        .editorial-quote {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-            font-weight: 300;
-            position: relative;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--ds-cobalt);
         }
 
         /* Interactive Buttons */
@@ -90,22 +68,25 @@
             box-shadow: 0 4px 12px rgba(76, 0, 255, 0.3);
         }
 
-        .btn-secondary {
-            background-color: white;
-            color: var(--ds-inkwell);
-            border: 1px solid #E2E8F0;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* Timeline Step */
+        .timeline-step {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #E2E8F0;
+            padding-bottom: 2rem;
         }
-        .btn-secondary:hover {
-            border-color: var(--ds-cobalt);
-            color: var(--ds-cobalt);
-            background-color: #F8FAFC;
+        .timeline-step:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--ds-cobalt);
         }
 
         /* Custom scrollbar */
@@ -125,12 +106,14 @@
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
                 <a href="#context" class="hover:text-[#4C00FF] transition">Context</a>
-                <a href="#challenges" class="hover:text-[#4C00FF] transition">Challenges</a>
-                <a href="#scope" class="hover:text-[#4C00FF] transition">Scope</a>
+                <a href="#challenges" class="hover:text-[#4C00FF] transition">Impact</a>
+                <a href="#solution" class="hover:text-[#4C00FF] transition">Solution</a>
+                <a href="#outcomes" class="hover:text-[#4C00FF] transition">ROI</a>
+                <a href="#timeline" class="hover:text-[#4C00FF] transition">Timeline</a>
                 <a href="#demos" class="hover:text-[#4C00FF] transition">Demos</a>
                 <a href="#investment" class="hover:text-[#4C00FF] transition">Investment</a>
             </div>
-            <a href="#next-steps" class="bg-[#130032] text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-[#4C00FF] transition">
+            <a href="#timeline" class="bg-[#130032] text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-[#4C00FF] transition">
                 Next Steps
             </a>
         </div>
@@ -145,7 +128,7 @@
 
         <div class="relative z-10 max-w-4xl animate-fade-in-up">
             <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-[#CBC2FF] text-xs font-mono mb-6 backdrop-blur-sm">
-                PHASE 1: GETTING STARTED &nbsp;•&nbsp; VRB: FEB 26–27 &nbsp;•&nbsp; GO-LIVE: Q1
+                PHASE 1: GETTING STARTED &nbsp;•&nbsp; VRB: FEB 26 &nbsp;•&nbsp; GO-LIVE: Q1
             </span>
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight text-balance">
                 DocuSign IAM<br>Evaluation Workspace
@@ -158,26 +141,22 @@
                 <a href="#demos" class="btn-primary border border-transparent !px-8 !py-4 !text-base shadow-xl shadow-[#4C00FF]/20">
                     <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Demos
                 </a>
-                <a href="#journey" class="group px-8 py-4 bg-white/5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition flex items-center gap-2 backdrop-blur-sm">
-                    View Journey Map <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
-                </a>
             </div>
         </div>
     </header>
 
-    <!-- 01. CONTEXT (Clean Split) -->
+    <!-- 01. CONTEXT -->
     <section id="context" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid lg:grid-cols-12 gap-12 items-start">
                 <div class="lg:col-span-5">
                     <h2 class="text-[#4C00FF] font-mono text-sm mb-4 tracking-wider">01 // CONTEXT</h2>
-                    <h3 class="text-4xl font-bold text-[#130032] mb-6 leading-tight">Business Context &<br>Strategic Objectives</h3>
+                    <h3 class="text-4xl font-bold text-[#130032] mb-6 leading-tight">Strategic<br>Objectives</h3>
                     <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        Uline operates at an enterprise scale where Procurement and Vendor Management work closely with Legal. As contract volume and complexity increase, the goal is to improve visibility and governance without slowing the business down.
+                        Uline operates at an enterprise scale where Procurement and Vendor Management work closely with Legal. As contract volume increases, the goal is to improve visibility and governance without slowing the business.
                     </p>
                 </div>
                 <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
-                    <!-- Objective Cards -->
                     <div class="p-6 bg-[#F8FAFC] rounded-xl border border-gray-100">
                         <i data-lucide="eye" class="text-[#4C00FF] mb-3 h-6 w-6"></i>
                         <h4 class="font-bold text-[#130032] mb-1">Visibility</h4>
@@ -203,140 +182,198 @@
         </div>
     </section>
 
-    <!-- 02. CHALLENGES (Dark Mode for Impact) -->
+    <!-- 02. CHALLENGES & IMPACT -->
     <section id="challenges" class="py-24 bg-[#130032] text-white relative">
         <div class="container mx-auto px-6 max-w-6xl relative z-10">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/10 pb-8">
-                <div>
-                    <h2 class="text-[#CBC2FF] font-mono text-sm mb-2 tracking-wider">02 // CURRENT STATE</h2>
-                    <h3 class="text-3xl font-bold">Systemic Challenges</h3>
-                </div>
-                <p class="text-gray-400 max-w-md mt-4 md:mt-0 text-sm">
-                    Identified challenges within the current ecosystem, representing process gaps rather than team shortcomings.
+            <div class="mb-16 border-b border-white/10 pb-8">
+                <h2 class="text-[#CBC2FF] font-mono text-sm mb-2 tracking-wider">02 // THE PROBLEM</h2>
+                <h3 class="text-3xl font-bold mb-4">Current Challenges & Business Impact</h3>
+                <p class="text-gray-400 max-w-2xl text-lg">
+                    Current processes rely on email and fragmented folders. This creates tangible risk and delays that are impacting speed-to-market.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition group">
-                    <div class="bg-[#FF5252]/20 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-[#FF5252]">
-                        <i data-lucide="inbox" class="h-6 w-6"></i>
+            <div class="space-y-6">
+                <!-- Challenge Row 1 -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-[#FF5252]/20 p-2 rounded-lg text-[#FF5252]"><i data-lucide="alert-circle" class="h-6 w-6"></i></div>
+                            <h4 class="text-xl font-bold">Cycle Time Pressure</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Reactive prioritization leads to internal pressure and inconsistent turnaround times.</p>
+                        <div class="bg-[#FF5252]/10 p-4 rounded-lg border border-[#FF5252]/20">
+                            <span class="text-[#FF5252] text-xs font-bold uppercase tracking-wider block mb-1">Negative Impact</span>
+                            <p class="text-white text-sm">Slower speed-to-market. Missed vendor start dates.</p>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">Fragmented Intake</h4>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Requests arrive through email, folders, and ad hoc paths, creating "black holes" for contract status.</p>
-                    <div class="pl-4 border-l-2 border-[#CBC2FF] text-[#CBC2FF] text-sm italic">
+                    <div class="bg-white/5 p-6 rounded-xl border-l-4 border-[#CBC2FF] italic text-[#CBC2FF] text-lg">
+                        “There’s a lot of pressure right now... why does it take four weeks to get through our contract?”
+                    </div>
+                </div>
+
+                <!-- Challenge Row 2 -->
+                <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-[#FF5252]/20 p-2 rounded-lg text-[#FF5252]"><i data-lucide="eye-off" class="h-6 w-6"></i></div>
+                            <h4 class="text-xl font-bold">Limited Visibility</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">No shared view into Legal’s queue. Status updates require manual follow-ups.</p>
+                        <div class="bg-[#FF5252]/10 p-4 rounded-lg border border-[#FF5252]/20">
+                            <span class="text-[#FF5252] text-xs font-bold uppercase tracking-wider block mb-1">Negative Impact</span>
+                            <p class="text-white text-sm">Bottlenecks are invisible. Administrative churn chasing status.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-xl border-l-4 border-[#CBC2FF] italic text-[#CBC2FF] text-lg">
+                        “I’m tired of trying to track everybody. I don't want to ask people for updates.”
+                    </div>
+                </div>
+
+                 <!-- Challenge Row 3 -->
+                 <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="bg-[#FF5252]/20 p-2 rounded-lg text-[#FF5252]"><i data-lucide="inbox" class="h-6 w-6"></i></div>
+                            <h4 class="text-xl font-bold">Fragmented Intake</h4>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Requests arrive through email, folders, and ad hoc paths. No single "front door."</p>
+                        <div class="bg-[#FF5252]/10 p-4 rounded-lg border border-[#FF5252]/20">
+                            <span class="text-[#FF5252] text-xs font-bold uppercase tracking-wider block mb-1">Negative Impact</span>
+                            <p class="text-white text-sm">Risk of lost contracts, missed obligations, and audit failure.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-xl border-l-4 border-[#CBC2FF] italic text-[#CBC2FF] text-lg">
                         “Everyone signs a contract, and they throw it into a drawer... asking ‘who has the contract?’”
                     </div>
                 </div>
-
-                <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition group">
-                    <div class="bg-[#FF5252]/20 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-[#FF5252]">
-                        <i data-lucide="eye-off" class="h-6 w-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Limited Visibility</h4>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">No shared view into Legal’s queue. Status updates require manual follow-ups.</p>
-                    <div class="pl-4 border-l-2 border-[#CBC2FF] text-[#CBC2FF] text-sm italic">
-                        “What I need is a way to say, look — this is what’s in your legal queue. You can see.”
-                    </div>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition group">
-                    <div class="bg-[#FF5252]/20 w-12 h-12 rounded-full flex items-center justify-center mb-6 text-[#FF5252]">
-                        <i data-lucide="alert-circle" class="h-6 w-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3">Cycle Time Pressure</h4>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Reactive prioritization leads to internal pressure and inconsistent turnaround times.</p>
-                    <div class="pl-4 border-l-2 border-[#CBC2FF] text-[#CBC2FF] text-sm italic">
-                        “There’s a lot of pressure right now of saying, ‘why does it take four weeks?’”
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl md:text-3xl font-light leading-snug max-w-3xl mx-auto">
-                    “The core challenge is operating without a single system of record for contract intake, review, and insight.”
-                </h3>
             </div>
         </div>
     </section>
 
-    <!-- 03. SCOPE (Bento Grid) -->
-    <section id="scope" class="py-24 bg-[#F8F3F0]">
+    <!-- NARRATIVE PIVOT -->
+    <section class="py-16 bg-[#4C00FF] text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">The Path Forward</h2>
+            <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                It doesn't have to be this way. DocuSign IAM transforms this chaos into a structured, intelligent system of record—giving you control without the complexity.
+            </p>
+        </div>
+    </section>
+
+    <!-- 03. SOLUTION -->
+    <section id="solution" class="py-24 bg-[#F8F3F0]">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="mb-12">
-                <h2 class="text-[#4C00FF] font-mono text-sm mb-4 tracking-wider">03 // PHASE 1 SCOPE</h2>
-                <h3 class="text-4xl font-bold text-[#130032]">Getting Started</h3>
+                <h2 class="text-[#4C00FF] font-mono text-sm mb-4 tracking-wider">03 // THE SOLUTION</h2>
+                <h3 class="text-4xl font-bold text-[#130032]">How We Solve It</h3>
                 <p class="text-gray-600 mt-4 max-w-xl">
-                    We are using a "Crawl, Walk, Run" approach. Phase 1 prioritizes adoption and usability before automation.
+                    We are replacing ad-hoc emails with a purpose-built platform. Here is how specific DocuSign capabilities map to your challenges.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- Large Card: Agreement Desk -->
+                <!-- Solution 1: Agreement Desk -->
                 <div class="md:col-span-2 bento-card relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
                         <i data-lucide="layout-dashboard" class="w-32 h-32 text-[#4C00FF]"></i>
                     </div>
                     <div class="relative z-10">
-                        <div class="w-10 h-10 bg-[#4C00FF] rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="layout-dashboard" class="text-white w-5 h-5"></i>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 bg-[#4C00FF] rounded-lg flex items-center justify-center">
+                                <i data-lucide="layout-dashboard" class="text-white w-5 h-5"></i>
+                            </div>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">SOLVES INTAKE</span>
                         </div>
                         <h4 class="text-xl font-bold text-[#130032] mb-2">Agreement Desk</h4>
-                        <p class="text-gray-600 max-w-sm">Centralized intake and queues for Procurement and Legal. This replaces the "black hole" of email with a transparent dashboard.</p>
-                        <div class="mt-6 flex gap-2">
-                            <span class="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-gray-600">Intake Forms</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-gray-600">Queues</span>
-                        </div>
+                        <p class="text-gray-600 max-w-lg mb-4">
+                            A centralized "front door" for all requests. Procurement and Legal get a unified dashboard to manage intake, routing, and approvals in one place.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-[#4C00FF]"></i> Centralized Intake Forms ("Jackets")</li>
+                            <li class="flex items-center gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-[#4C00FF]"></i> Automated Routing Queues</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Card: Navigator -->
+                <!-- Solution 2: Navigator -->
                 <div class="bento-card group">
-                    <div class="w-10 h-10 bg-[#26065D] rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="search" class="text-white w-5 h-5"></i>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 bg-[#26065D] rounded-lg flex items-center justify-center">
+                            <i data-lucide="search" class="text-white w-5 h-5"></i>
+                        </div>
+                        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">SOLVES VISIBILITY</span>
                     </div>
                     <h4 class="text-xl font-bold text-[#130032] mb-2">Navigator</h4>
-                    <p class="text-gray-600 text-sm">AI-assisted search and centralized repository for executed agreements.</p>
+                    <p class="text-gray-600 text-sm mb-4">AI-assisted repository that turns static contracts into searchable data.</p>
+                    <p class="text-xs text-gray-500 mt-auto pt-4 border-t border-gray-100">"Find any contract in seconds, not hours."</p>
                 </div>
 
-                <!-- Card: Intake -->
-                <div class="bento-card group">
-                    <div class="w-10 h-10 bg-[#CBC2FF] rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="mouse-pointer" class="text-[#130032] w-5 h-5"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-[#130032] mb-2">Intake Methods</h4>
-                    <p class="text-gray-600 text-sm">Intranet URL form ("jacket") + Shared Mailbox integration.</p>
-                </div>
-
-                <!-- Card: Users -->
-                <div class="md:col-span-2 bento-card flex-row items-center justify-between gap-8">
+                <!-- Solution 3: Users -->
+                <div class="md:col-span-2 bento-card flex-row items-center justify-between gap-8 bg-[#130032] border-[#130032]">
                     <div>
-                        <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="users" class="text-white w-5 h-5"></i>
+                        <div class="flex items-center gap-3 mb-2">
+                            <i data-lucide="users" class="text-[#CBC2FF] w-5 h-5"></i>
+                            <h4 class="text-xl font-bold text-white">Initial User Group</h4>
                         </div>
-                        <h4 class="text-xl font-bold text-[#130032] mb-1">Initial User Group</h4>
-                        <p class="text-gray-600 text-sm">Focused group (~5 users) to drive adoption.</p>
-                    </div>
-                    <div class="text-right hidden sm:block">
-                        <p class="text-2xl font-light italic text-[#4C00FF]">"I need quick wins."</p>
+                        <p class="text-[#CBC2FF]/80 text-sm">We focus on ~5 core users first to drive deep adoption and validate workflows before scaling.</p>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="mt-8 text-center">
-                <p class="text-sm text-gray-500 bg-white inline-block px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                    <i data-lucide="info" class="inline w-4 h-4 mr-1 relative -top-px"></i> 
-                    ServiceNow integration & legacy migration are <strong>out of scope</strong> for Phase 1.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- 04. JOURNEY MAP (Timeline) -->
+    <!-- 04. OUTCOMES (New Section) -->
+    <section id="outcomes" class="py-24 bg-white border-y border-gray-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-[#4C00FF] font-mono text-sm mb-4 tracking-wider">04 // THE ROI</h2>
+                <h3 class="text-4xl font-bold text-[#130032]">Projected Operational Impact</h3>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Addressing the specific pain points cited by leadership transforms operational efficiency. Here is the projected impact of Phase 1.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Outcome 1 -->
+                <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-xl shadow-gray-200/50 text-center hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="clock" class="w-8 h-8 text-[#4C00FF]"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-[#130032] mb-3">50% Faster Cycles</h4>
+                    <p class="text-gray-600 text-sm mb-4">Addressing the "4 week" drag.</p>
+                    <p class="text-xs text-gray-400 border-t border-gray-100 pt-3">Reduced touchpoints & auto-routing.</p>
+                </div>
+
+                <!-- Outcome 2 -->
+                <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-xl shadow-gray-200/50 text-center hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="check-circle-2" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-[#130032] mb-3">Zero "Chasing"</h4>
+                    <p class="text-gray-600 text-sm mb-4">Eliminating the "tracking everybody" burden.</p>
+                    <p class="text-xs text-gray-400 border-t border-gray-100 pt-3">Self-service dashboards for stakeholders.</p>
+                </div>
+
+                <!-- Outcome 3 -->
+                <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-xl shadow-gray-200/50 text-center hover:scale-105 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-[#26065D]"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-[#130032] mb-3">Risk Mitigation</h4>
+                    <p class="text-gray-600 text-sm mb-4">Closing the "drawer" gaps.</p>
+                    <p class="text-xs text-gray-400 border-t border-gray-100 pt-3">100% of Phase 1 agreements centrally stored.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05. JOURNEY MAP -->
     <section id="journey" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
-            <h2 class="text-[#4C00FF] font-mono text-sm mb-12 tracking-wider">04 // JOURNEY MAP</h2>
+            <h2 class="text-[#4C00FF] font-mono text-sm mb-12 tracking-wider">05 // JOURNEY MAP</h2>
             
             <div class="grid md:grid-cols-3 gap-0 border-t border-gray-200">
                 <!-- Phase 1 -->
@@ -375,21 +412,60 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- 06. TIMELINE (Replaces Next Steps) -->
+    <section id="timeline" class="py-24 bg-[#130032] text-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-[#CBC2FF] font-mono text-sm mb-12 tracking-wider text-center">06 // EVALUATION TIMELINE</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-16 text-center">Path to Phase 1 Go-Live</h3>
             
-            <div class="mt-12 p-6 bg-[#F8F3F0] rounded-xl border-l-4 border-[#4C00FF] flex items-center gap-4">
-                <i data-lucide="quote" class="text-[#4C00FF] fill-current h-6 w-6 opacity-30"></i>
-                <p class="italic text-[#130032]">“Starts with the contract, ends with the contract. I want the beginning and the end to marry together.”</p>
+            <div class="relative border-l-2 border-[#4C00FF] ml-4 md:ml-12 space-y-12">
+                
+                <!-- Step 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-white border-4 border-[#4C00FF]"></div>
+                    <span class="text-[#CBC2FF] font-bold text-xs uppercase tracking-wider mb-2 block">FEB 1 – 25 (CURRENT)</span>
+                    <h4 class="text-2xl font-bold mb-2">Business Validation</h4>
+                    <p class="text-gray-400 max-w-lg">Russ validating business alignment. Internal review of demos and scope confirmation.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#FF5252] border-4 border-[#130032] ring-2 ring-[#FF5252]"></div>
+                    <span class="text-[#FF5252] font-bold text-xs uppercase tracking-wider mb-2 block">FEB 26</span>
+                    <h4 class="text-2xl font-bold mb-2 text-white">Vendor Business Review (VBR)</h4>
+                    <p class="text-white/90 max-w-lg">Presentation to internal stakeholders to finalize decision on moving forward.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#130032] border-2 border-white/30"></div>
+                    <span class="text-gray-500 font-bold text-xs uppercase tracking-wider mb-2 block">FEB 28 – MAR 10</span>
+                    <h4 class="text-2xl font-bold mb-2 text-white/50">Contract Execution</h4>
+                    <p class="text-gray-500 max-w-lg">Finalize commercial agreement to support Q1 start.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#130032] border-2 border-white/30"></div>
+                    <span class="text-gray-500 font-bold text-xs uppercase tracking-wider mb-2 block">MARCH 15+</span>
+                    <h4 class="text-2xl font-bold mb-2 text-white/50">Phase 1 Kickoff</h4>
+                    <p class="text-gray-500 max-w-lg">Getting Started implementation begins.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 05. DEMOS (Theater Mode - FIXED) -->
-    <section id="demos" class="py-24 bg-[#130032]">
+    <!-- 07. DEMOS -->
+    <section id="demos" class="py-24 bg-[#F8F3F0]">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="flex flex-col md:flex-row items-end justify-between mb-12">
                 <div>
-                    <h2 class="text-[#CBC2FF] font-mono text-sm mb-4 tracking-wider">05 // PLATFORM DEMOS</h2>
-                    <h3 class="text-4xl font-bold text-white">Experience DocuSign IAM</h3>
+                    <h2 class="text-[#4C00FF] font-mono text-sm mb-4 tracking-wider">07 // PLATFORM DEMOS</h2>
+                    <h3 class="text-4xl font-bold text-[#130032]">Experience DocuSign IAM</h3>
                 </div>
                 <div class="hidden md:block text-right">
                      <p class="text-gray-400 italic">"I don’t want to be the car salesman.<br>I want them to drive the car."</p>
@@ -398,100 +474,124 @@
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Demo Card 1: Agreement Desk -->
-                <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86SdtuXHK45Qci0M5w7HmxPLUSSIGN___HhmfHVTQ3DCDt9v1TJUy47S1Wp4aTvKuxQ3fDogiUlYvglGXMGcp6f05___cwaw1EH" target="_blank" class="group block relative w-full bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-[#4C00FF] hover:shadow-2xl hover:shadow-[#4C00FF]/20 transition-all duration-300">
-                    <!-- Background Decoration -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#4C00FF]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    
+                <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86SdtuXHK45Qci0M5w7HmxPLUSSIGN___HhmfHVTQ3DCDt9v1TJUy47S1Wp4aTvKuxQ3fDogiUlYvglGXMGcp6f05___cwaw1EH" target="_blank" class="group block relative w-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#4C00FF] hover:shadow-2xl hover:shadow-[#4C00FF]/10 transition-all duration-300">
                     <div class="aspect-video relative flex flex-col items-center justify-center p-8 text-center z-10">
                         <div class="w-16 h-16 bg-[#4C00FF] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6">
                             <i data-lucide="play" class="w-6 h-6 text-white ml-1"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Agreement Desk: Intake & Routing</h4>
-                        <p class="text-gray-400 text-sm mb-4">Launch interactive demo in new window</p>
-                        <span class="text-[#CBC2FF] text-xs font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Start Experience <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                        </span>
+                        <h4 class="text-xl font-bold text-[#130032] mb-2">Agreement Desk</h4>
+                        <p class="text-gray-400 text-sm mb-4">Intake, Routing & Review Workflow</p>
+                        <span class="text-[#4C00FF] text-xs font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">Start Experience <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 </a>
 
                 <!-- Demo Card 2: Navigator -->
-                <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86RJPLUSSIGNa2QFAISlQmUBF4aVp7Ql8PLUSSIGNbHvmEIrK___gRXVRFxNZYgXWa5URiQ9___FduydIsS88fiYVAbAd8qNleaapGbQVd" target="_blank" class="group block relative w-full bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-[#4C00FF] hover:shadow-2xl hover:shadow-[#4C00FF]/20 transition-all duration-300">
-                    <!-- Background Decoration -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#26065D]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    
+                <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86RJPLUSSIGNa2QFAISlQmUBF4aVp7Ql8PLUSSIGNbHvmEIrK___gRXVRFxNZYgXWa5URiQ9___FduydIsS88fiYVAbAd8qNleaapGbQVd" target="_blank" class="group block relative w-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#4C00FF] hover:shadow-2xl hover:shadow-[#4C00FF]/10 transition-all duration-300">
                     <div class="aspect-video relative flex flex-col items-center justify-center p-8 text-center z-10">
                         <div class="w-16 h-16 bg-[#26065D] border border-white/20 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6">
                             <i data-lucide="search" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2">Navigator: AI Repository</h4>
-                        <p class="text-gray-400 text-sm mb-4">Launch interactive demo in new window</p>
-                        <span class="text-[#CBC2FF] text-xs font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Start Experience <i data-lucide="arrow-right" class="w-3 h-3"></i>
-                        </span>
+                        <h4 class="text-xl font-bold text-[#130032] mb-2">Navigator</h4>
+                        <p class="text-gray-400 text-sm mb-4">AI Repository & Analytics</p>
+                        <span class="text-[#4C00FF] text-xs font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">Start Experience <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 06. IMPLEMENTATION & INVESTMENT (Pricing Card) -->
+    <!-- 08. INVESTMENT SUMMARY -->
     <section id="investment" class="py-24 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid lg:grid-cols-2 gap-16">
-                
-                <!-- Implementation Column -->
+                <!-- Strategic Value Column -->
                 <div>
-                    <h2 class="text-[#4C00FF] font-mono text-sm mb-6 tracking-wider">06 // GETTING STARTED</h2>
-                    <h3 class="text-3xl font-bold text-[#130032] mb-6">Expert Implementation</h3>
+                    <h2 class="text-[#4C00FF] font-mono text-sm mb-6 tracking-wider">08 // INVESTMENT SUMMARY</h2>
+                    <h3 class="text-3xl font-bold text-[#130032] mb-6">Investing in Outcomes</h3>
                     <p class="text-gray-600 mb-8 leading-relaxed">
-                        We recommend our "Getting Started" packages. These are designed for rapid time-to-value, establishing a maintainable foundation based on best practices.
+                        You aren't just buying software licenses; you are investing in a standardized framework for success. The "Getting Started" package establishes the foundation for your end-to-end vision.
                     </p>
                     
-                    <div class="space-y-4 mb-8">
+                    <div class="space-y-6">
+                         <!-- Foundation Pillar 1 -->
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-[#F8F3F0] rounded-full flex items-center justify-center shrink-0">
-                                <i data-lucide="zap" class="text-[#4C00FF] w-6 h-6"></i>
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="git-merge" class="text-[#4C00FF] w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-[#130032]">Rapid Time-to-Value</h4>
-                                <p class="text-sm text-gray-500">Deploy core workflows in weeks, not months.</p>
+                                <h4 class="font-bold text-[#130032]">Standardization</h4>
+                                <p class="text-sm text-gray-600">Enterprise-wide eSignature & Contract Management standard.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-[#F8F3F0] rounded-full flex items-center justify-center shrink-0">
-                                <i data-lucide="shield-check" class="text-[#4C00FF] w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-[#130032]">Maintainable Foundation</h4>
-                                <p class="text-sm text-gray-500">Configuration tailored to your specific use cases.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="flex flex-col gap-3">
-                        <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86T0l___1DZAx3mIS8Sd4w7ndqL7dGv6NqD___SFzduPKD8UhuQG24DMo4JU39RV9Zp8sD4tPLUSSIGNEyZgPVLNXACaxOiuxPLUSSIGNE" target="_blank" class="p-4 border border-gray-200 rounded-lg hover:border-[#4C00FF] hover:bg-[#F8F3F0] transition flex items-center justify-between group">
-                            <span class="font-medium text-[#130032] group-hover:text-[#4C00FF]">Agreement Desk Package Data Sheet</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-[#4C00FF]"></i>
-                        </a>
-                        <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86Q8KL___EsJaN9rcxWySM4l4kYrQGzel2ynmCv7UmnDdwjSaiuUm6NByU521J1d6okFxii9qWmSdNLdGsGNvFWooc" target="_blank" class="p-4 border border-gray-200 rounded-lg hover:border-[#4C00FF] hover:bg-[#F8F3F0] transition flex items-center justify-between group">
-                            <span class="font-medium text-[#130032] group-hover:text-[#4C00FF]">Navigator Package Data Sheet</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 group-hover:text-[#4C00FF]"></i>
-                        </a>
+                         <!-- Foundation Pillar 2 -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="workflow" class="text-[#4C00FF] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#130032]">Automation</h4>
+                                <p class="text-sm text-gray-600">Centralized intake, routing, and review workflows.</p>
+                            </div>
+                        </div>
+
+                        <!-- Foundation Pillar 3 -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="scan-eye" class="text-[#4C00FF] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#130032]">AI Insight</h4>
+                                <p class="text-sm text-gray-600">Automated review to surface risk and non-standard terms.</p>
+                            </div>
+                        </div>
+
+                        <!-- Foundation Pillar 4 -->
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="lock" class="text-[#4C00FF] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#130032]">Control</h4>
+                                <p class="text-sm text-gray-600">Centralized negotiation, approvals, and version control (Single System of Record).</p>
+                            </div>
+                        </div>
+
+                        <!-- Foundation Pillar 5 -->
+                         <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="database" class="text-[#4C00FF] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#130032]">Intelligence</h4>
+                                <p class="text-sm text-gray-600">Smart repository for reporting, obligations, and audit readiness.</p>
+                            </div>
+                        </div>
+
+                        <!-- Foundation Pillar 6 -->
+                         <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-[#F8F3F0] rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="network" class="text-[#4C00FF] w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#130032]">Scalability</h4>
+                                <p class="text-sm text-gray-600">Enterprise-level solution capable of integrating into broader system architecture.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Investment Card -->
                 <div>
-                     <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl overflow-hidden shadow-lg">
+                     <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl overflow-hidden shadow-lg sticky top-24">
                         <div class="bg-[#130032] p-8 text-white">
-                            <h3 class="text-lg font-medium opacity-80 mb-1">Total Phase 1 Investment</h3>
+                            <h3 class="text-lg font-medium opacity-80 mb-1">Investment Structure</h3>
                             <div class="flex items-baseline gap-2">
                                 <span class="text-4xl font-bold text-[#CBC2FF]">$29,722</span>
                                 <span class="text-sm opacity-60">First Year Total</span>
                             </div>
                         </div>
                         <div class="p-8 space-y-8">
-                            <!-- Line Item 1 -->
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h4 class="font-bold text-[#130032]">DocuSign IAM Licensing</h4>
@@ -502,7 +602,6 @@
                                     <span class="block text-[10px] text-gray-400 uppercase">Per Year</span>
                                 </div>
                             </div>
-                            <!-- Line Item 2 -->
                             <div class="flex justify-between items-start pt-6 border-t border-gray-200">
                                 <div>
                                     <h4 class="font-bold text-[#130032]">Implementation Services</h4>
@@ -517,70 +616,15 @@
                         <div class="px-8 py-4 bg-[#F1F5F9] text-center border-t border-gray-200">
                             <p class="text-xs text-gray-500 font-medium">Outcomes-based investment tailored for adoption.</p>
                         </div>
-                    </div>
-                    <p class="text-center text-xs text-gray-400 mt-4">Future-phase integrations and legacy migrations excluded.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SUCCESS CRITERIA -->
-    <section class="py-24 bg-[#F8F3F0]">
-        <div class="container mx-auto px-6 max-w-6xl text-center">
-            <h2 class="text-[#4C00FF] font-mono text-sm mb-8 tracking-wider">SUCCESS METRICS</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-[#130032] text-xl mb-2">Clear Visibility</h3>
-                    <p class="text-sm text-gray-500">Real-time insight into queues.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-[#130032] text-xl mb-2">Reduced Cycle Time</h3>
-                    <p class="text-sm text-gray-500">Faster turnaround on agreements.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-[#130032] text-xl mb-2">Scalable Foundation</h3>
-                    <p class="text-sm text-gray-500">Ready for enterprise integration.</p>
-                </div>
-            </div>
-            <div class="mt-12 inline-block">
-                <p class="text-xl font-light text-[#130032] italic">
-                    “This way, I don’t have to ask people for updates. I can look at it and see where there’s a problem.”
-                </p>
-                <p class="text-xs font-bold text-[#4C00FF] uppercase mt-4">— Uline, IT Vendor Management</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEXT STEPS -->
-    <section id="next-steps" class="py-24 bg-[#130032] text-white">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-12">Decision Path</h2>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <div class="flex-1 bg-white/5 border border-white/10 p-8 rounded-xl text-left">
-                    <span class="text-[#CBC2FF] text-xs font-bold uppercase tracking-wider mb-4 block">Action Required</span>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#130032] flex items-center justify-center font-bold text-xs">1</span> Review Demos</li>
-                        <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#130032] flex items-center justify-center font-bold text-xs">2</span> Align on Phase 1 Scope</li>
-                    </ul>
-                </div>
-                 <div class="flex-1 bg-[#4C00FF] border border-[#4C00FF] p-8 rounded-xl text-left shadow-lg shadow-[#4C00FF]/20">
-                    <span class="text-white text-xs font-bold uppercase tracking-wider mb-4 block opacity-80">Key Milestone</span>
-                    <div class="flex items-center gap-4">
-                        <i data-lucide="calendar" class="w-8 h-8 text-white"></i>
-                        <div>
-                            <h3 class="text-2xl font-bold">VRB Review</h3>
-                            <p class="text-white/80 text-sm">Feb 26–27</p>
+                        <div class="p-4 bg-white border-t border-gray-100 flex flex-col gap-2">
+                             <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86T0l___1DZAx3mIS8Sd4w7ndqL7dGv6NqD___SFzduPKD8UhuQG24DMo4JU39RV9Zp8sD4tPLUSSIGNEyZgPVLNXACaxOiuxPLUSSIGNE" target="_blank" class="text-xs text-[#4C00FF] hover:underline flex items-center justify-center gap-1">
+                                Agreement Desk Implementation Deliverables <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                            <a href="https://content.docusign.com/i/2eJHfzeJbeFjTWim1LFTv7IP54t9a______vJe9ksVre86Q8KL___EsJaN9rcxWySM4l4kYrQGzel2ynmCv7UmnDdwjSaiuUm6NByU521J1d6okFxii9qWmSdNLdGsGNvFWooc" target="_blank" class="text-xs text-[#4C00FF] hover:underline flex items-center justify-center gap-1">
+                                Navigator Implementation Deliverables <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="flex-1 bg-white/5 border border-white/10 p-8 rounded-xl text-left">
-                    <span class="text-[#CBC2FF] text-xs font-bold uppercase tracking-wider mb-4 block">Target Outcome</span>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> Contract Execution (Q1)</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-green-400"></i> Phase 1 Kickoff</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -593,9 +637,6 @@
         </div>
     </footer>
 
-    <!-- Initialize Lucide Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
